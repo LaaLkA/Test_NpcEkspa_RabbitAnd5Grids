@@ -3,15 +3,19 @@ package ulit;
 import core.Animals.Rabbit;
 import core.Gardens.Garden;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Runner {
-//    public void run(){
-//        Rabbit rabbit = new Rabbit("Tobby", 5, 10);
-//        List<Garden> gardens = new List<Garden>(5);
-//        for (int i = 0; i < 5; i++){
-//            gardens[i] = new Garden(i);
-//        }
-//    }
+    public static void run(){
+        Rabbit rabbit = new Rabbit("Tobby", 5, 10);
+        ArrayList<Garden> gardens = new ArrayList<>();
+        for (int i = 1; i < 6; i++){
+            gardens.add(new Garden(i));
+        }
+        System.out.println(gardens);
 
+        rabbit.collect(gardens);
+        rabbit.rabbitBag();
+
+    }
 }

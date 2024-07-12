@@ -1,13 +1,18 @@
 package core.Gardens;
 
 public class Garden {
-    private Integer carrotWeight;
+    private int carrotWeight;
 
-    public Garden(Integer carrotWeights) {
+    public Garden(int carrotWeights) {
         this.carrotWeight = carrotWeights;
     }
 
     public Integer getCarrotWeight() {
         return carrotWeight;
+    }
+
+    @Override
+    public String toString() {
+        return "Garden(carrotWeight = " + carrotWeight + "кг)";
     }
 }

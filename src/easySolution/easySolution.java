@@ -1,4 +1,4 @@
-package easy;
+package easySolution;
 
 import java.util.ArrayList;
 
