@@ -23,24 +23,26 @@ public class easySolution {
                 }
             }
         }
-
         for (int trips = 1; trips < maxTrips; trips++) {
-            if (gardens.isEmpty()) {
-                currentWeight = gardens.get(trips - 1);
+            if (!gardens.isEmpty()) {
+                currentWeight = gardens.get(0);
                 if (currentWeight != maxWeight) {
-                    for (int l = trips + 1; l < gardens.size() - 1; l++) {
+                    for (int l = gardens.size() - 1; l > 0; l--) {
                         if (currentWeight + gardens.get(l) == maxWeight) {
-                            collect = collect + currentWeight + gardens.get(l);
+                            collect += currentWeight + gardens.get(l);
                             gardens.remove(l);
-                            System.out.println("1" + collect);
+                            gardens.remove(0);
+                            break;
                         }
                     }
                 } else {
                     collect += currentWeight;
-                    gardens.remove(trips - 1);
-                    System.out.println("1" + collect);
+                    gardens.remove(0);
                 }
-                System.out.println("1" + collect);
+            } else {
+                trips -= 1;
+                System.out.println("Все полянки пустые. Кролик собрал " + collect + "кг моркови за " + trips + " ходки");
+                break;
             }
         }
     }
